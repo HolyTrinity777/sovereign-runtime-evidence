@@ -40,6 +40,10 @@ The runtime was evaluated under a comprehensive adversarial chaos suite.
 - **Failed:** `0`
 - **Pass rate:** `100%`
 
+### Private Access / NDA
+
+The private sovereign runtime core is not included in this repository. Access to private materials, implementation details, or commercial review may be provided separately under NDA or other written agreement.
+
 ### Coverage Domains
 
 #### Core Infrastructure Chaos
