@@ -1,0 +1,6 @@
+{
+  "agent": "Consensus",
+  "row_count": 16,
+  "source_dataset": "sovereignty_chaos_dataset.csv",
+  "purpose": "Recommended execution order for first chaos test pass"
+}
