@@ -1,0 +1,47 @@
+# Citation File Format (CFF)
+# For the Sovereign Runtime Public Evidence Package
+
+cff-version: 1.2.0
+message: >-
+  If you use this public evidence package, please cite it using the metadata below.
+
+type: software
+
+title: "Sovereign Runtime — Public Evidence Package"
+version: "v0.1"
+date-released: "2026-05-17"
+abstract: >-
+  Public evidence package for a 7-agent sovereign actor runtime designed for bounded
+  digital sovereignty. The package includes high-level architecture, test methodology,
+  datasets, hashes, and aggregate survivability results.
+
+authors:
+  - family-names: "Project"
+    given-names: "Sovereign Runtime"
+    affiliation: "AxisEterna"
+
+keywords:
+  - sovereign runtime
+  - digital sovereignty
+  - adversarial robustness
+  - survivability testing
+  - public evidence package
+  - multi-agent systems
+
+license: "Custom-Source-Available"
+
+repository-code: "https://github.com/your-org/sovereign-runtime-evidence"
+
+preferred-citation:
+  type: software
+  title: "Sovereign Runtime — Public Evidence Package"
+  version: "v0.1"
+  date-released: "2026-05-17"
+  authors:
+    - family-names: "Project"
+      given-names: "Sovereign Runtime"
+      affiliation: "AxisEterna"
+  abstract: >-
+    Public evidence package for a 7-agent sovereign actor runtime designed for bounded
+    digital sovereignty.
+  url: "https://github.com/HolyTrinity777/sovereign-runtime-evidence"
