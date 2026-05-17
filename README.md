@@ -8,12 +8,13 @@
 This repository contains the public evidence package for a 7-agent sovereign actor runtime designed for bounded digital sovereignty. It documents high-level architecture, test methodology, aggregate results, and reproducible public artifacts without disclosing private orchestration internals.
 
 ## Contents
-
 - `result.json` — Aggregated results and metadata.
 - `tests_dataset.csv` — Tabular test dataset.
 - `tests_dataset.json` — Structured JSON test dataset.
-- `screenshot.png` — Visual summary of the completed run.
+- `screenshot-1.png` — Visual summary of the completed run, part 1.
+- `screenshot-2.png` — Visual summary of the completed run, part 2.
 - `CHAOS_SUITE.md` — Test categories, methodology, and success criteria.
+
 
 ## System Overview
 
