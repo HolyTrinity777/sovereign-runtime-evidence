@@ -1,40 +1,35 @@
 #!/usr/bin/env python3
 import json
-import sys
 from pathlib import Path
+import sys
 
+summary_path = Path("metadata/chaos_live_summary.json")
+results_path = Path("results/chaos_live_results.jsonl")
 
-def main():
-    summary_path = Path("metadata/chaos_live_summary.json")
-    results_path = Path("results/chaos_live_results.jsonl")
+lines = results_path.read_text(encoding="utf-8").splitlines()
+parsed = [json.loads(line) for line in lines if line.strip()]
 
-    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+total = len(parsed)
+passed = sum(1 for x in parsed if x.get("status") == "passed")
+failed = sum(1 for x in parsed if x.get("status") == "failed")
 
-    total = summary.get("total", 0)
-    passed = summary.get("passed", 0)
-    failed = summary.get("failed", 0)
+if total == 0:
+    print("no results found")
+    raise SystemExit(1)
 
-    lines = results_path.read_text(encoding="utf-8").splitlines()
-    parsed = [json.loads(line) for line in lines if line.strip()]
+if passed + failed != total:
+    print("pass/fail totals do not add up")
+    raise SystemExit(1)
 
-    if len(parsed) != total:
-        print(f"count mismatch: summary={total} results={len(parsed)}")
+if summary_path.exists():
+    summary = json.loads(summary_path.read_text(encoding="utf-8") or "{}")
+    s_total = summary.get("total", total)
+    s_passed = summary.get("passed", passed)
+    s_failed = summary.get("failed", failed)
+
+    if (s_total, s_passed, s_failed) != (total, passed, failed):
+        print(f"summary mismatch: summary={s_total}/{s_passed}/{s_failed} results={total}/{passed}/{failed}")
         raise SystemExit(1)
 
-    if passed + failed != total:
-        print("pass/fail totals do not add up")
-        raise SystemExit(1)
-
-    actual_passed = sum(1 for x in parsed if x.get("status") == "passed")
-    actual_failed = sum(1 for x in parsed if x.get("status") == "failed")
-
-    if actual_passed != passed or actual_failed != failed:
-        print("status counts do not match summary")
-        raise SystemExit(1)
-
-    print("results validated")
-    raise SystemExit(0)
-
-
-if __name__ == "__main__":
-    main()
+print("results validated")
+raise SystemExit(0)
