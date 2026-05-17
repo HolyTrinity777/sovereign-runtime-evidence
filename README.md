@@ -7,47 +7,64 @@
 
 This repository contains the public evidence package for a 7-agent sovereign actor runtime designed for bounded digital sovereignty. It documents high-level architecture, test methodology, aggregate results, and reproducible public artifacts without disclosing private orchestration internals.
 
-## Purpose of This Repository
+---
 
-This repository provides a public evidence package for review, verification, and transparency. It is intended to document observable behavior, test structure, and aggregate results while keeping private implementation details excluded.
+## Purpose
+
+This repository serves a single, well-defined purpose: to provide independently verifiable evidence of runtime behavior under adversarial conditions.
+
+It is not an open-source release. It does not contain implementation code, private architecture, or operational secrets. It is a structured transparency artifact intended for technical review, institutional due diligence, and independent verification.
+
+---
 
 ## Contents
+
 - `result.json` — Aggregated results and metadata.
 - `tests_dataset.csv` — Tabular test dataset.
 - `tests_dataset.json` — Structured JSON test dataset.
-- `screenshot-1.png` — Visual summary of the completed run, part 1.
-- `screenshot-2.png` — Visual summary of the completed run, part 2.
-- `CHAOS_SUITE.md` — Test categories, methodology, and success criteria.
+- `screenshot-1.png` — Terminal output of the completed run, part 1.
+- `screenshot-2.png` — Terminal output of the completed run, part 2.
+- `CHAOS_SUITE.md` — Full test categories, methodology, and success criteria.
+- `public-shell/` — Minimal observable-behavior shell for independent verification.
+- `scripts/` — Hash verification, result validation, and summary rendering tools.
+- `metadata/` — Manifest and integrity hashes for all published artifacts.
 
+---
 
 ## System Overview
 
-The runtime is organized around seven public roles that support coordination, recovery, safety, and continuity:
+The runtime is organized around seven named roles. Each role carries a bounded responsibility within the overall system. These descriptions are provided for orientation only.
 
-- **Consensus** — Supports coordinated decision-making.
-- **Healer** — Supports recovery and restoration.
-- **Anxiarch** — Supports detection and policy oversight.
-- **Destroyer** — Supports isolation of compromised components.
-- **Limbrix** — Supports resource management and restraint.
-- **Preaxis** — Supports continuity across restart and migration events.
-- **Vortexus** — Supports boundary and integrity protection.
+| Role | Responsibility |
+|---|---|
+| **Consensus** | Supports coordinated decision-making. |
+| **Healer** | Supports recovery and restoration. |
+| **Anxiarch** | Supports detection and policy oversight. |
+| **Destroyer** | Supports isolation of compromised components. |
+| **Limbrix** | Supports resource management and restraint. |
+| **Preaxis** | Supports continuity across restart and migration events. |
+| **Vortexus** | Supports boundary and integrity protection. |
 
-These descriptions are intentionally high level. The internal implementation, decision rules, and operational details are not disclosed in this repository.
+Internal implementation, decision rules, arbitration logic, and operational details are not disclosed in this repository.
+
+---
 
 ## Verification Summary
 
-The runtime was evaluated under a comprehensive adversarial chaos suite.
+The runtime was evaluated under a comprehensive adversarial chaos suite covering 21 distinct fault categories across all 7 agents.
 
 ### Aggregate Results
 
-- **Total test runs:** `581`
-- **Passed:** `581`
-- **Failed:** `0`
-- **Pass rate:** `100%`
+| Metric | Value |
+|---|---|
+| Total test runs | 581 |
+| Passed | 581 |
+| Failed | 0 |
+| Pass rate | 100% |
 
 ### Coverage Domains
 
-#### Core Infrastructure Chaos
+**Core Infrastructure Chaos**
 - Unauthorized command handling.
 - Replay attack detection.
 - Stale state rejection.
@@ -65,19 +82,21 @@ The runtime was evaluated under a comprehensive adversarial chaos suite.
 - Malformed input rejection.
 - Migration continuity.
 
-#### Advanced Adversarial Categories
+**Advanced Adversarial Categories**
 - API manipulation.
 - Cryptographic subversion.
 - Supply chain compromise.
 - AI manipulation.
 - Temporal manipulation.
 
-#### Ultimate Category
+**Ultimate Category**
 - Boundary and integrity stress testing.
+
+---
 
 ## Observed Behaviors
 
-Across the full suite, the runtime demonstrated:
+Across the full suite, the runtime consistently demonstrated:
 
 - Identity continuity during process death and migration scenarios.
 - Policy enforcement against unauthorized or conflicting commands.
@@ -86,28 +105,13 @@ Across the full suite, the runtime demonstrated:
 - Safe degradation under resource pressure and partial infrastructure failure.
 - Fail-closed behavior under adversarial conditions.
 
-## Limitations
-
-- This repository publishes only the public evidence layer.
-- Internal orchestration logic, arbitration rules, and private implementation details are not included.
-- The public artifacts are designed for verification of observable behavior, not full system reproduction.
-- The reported results reflect the tested public package and its defined scope.
-
-## License and Access
-
-This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2. The repository contains a public evidence package released solely for independent verification of observable behavior under controlled fault-injection conditions.
-
-The package is not an open-source release, and no rights are granted beyond those explicitly stated in the license. Any commercial use, redistribution, AI/ML training use, or access beyond the limited public rights requires prior written permission from the Copyright Holder.
-
-### Private Access / NDA
-
-The private sovereign runtime core is not included in this repository. Access to private materials, implementation details, or commercial review may be provided separately under NDA or other written agreement.
+---
 
 ## Reproducibility
 
-This package is structured to support review and verification at the level of observable behavior.
+The public evidence package is structured to support independent review and verification at the level of observable behavior.
 
-A minimal public shell is included in the `/public-shell` directory to demonstrate observable behaviors:
+A minimal public shell is included in the `/public-shell` directory. It exposes only the observable surface of the runtime:
 - Policy submission.
 - Refusal logging.
 - Audit trail output.
@@ -119,6 +123,25 @@ To run the public evidence checks:
 python scripts/verify_hashes.py
 python scripts/validate_results.py
 python scripts/render_summary.py
+```
 
+All artifact hashes are documented in  metadata/ . Reviewers are encouraged to verify file integrity independently before analysis.
 
+## Limitations
 
+•	This repository publishes the public evidence layer only.
+•	Internal orchestration logic, arbitration rules, and private implementation details are intentionally excluded.
+•	The public artifacts support verification of observable behavior, not full system reproduction.
+•	The reported results reflect the defined test scope and the controlled conditions under which the suite was executed.
+•	Single-node execution model; distributed deployment behavior is not covered in this release.
+
+## License and Access
+
+This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2.
+The materials are released solely for independent verification of observable behavior under controlled fault-injection conditions. This is not an open-source release. No rights are granted beyond those explicitly stated in the license. Commercial use, redistribution, AI/ML training use, or any access beyond the stated public rights requires prior written permission from the Copyright Holder.
+See  LICENSE  for full terms.
+
+## Private Access and NDA
+
+The private sovereign runtime core is not included in this repository. It is maintained separately. Access to private materials, internal architecture, implementation details, or commercial review is available only under NDA or separate written agreement.
+For inquiries, contact the Copyright Holder directly.
