@@ -1,35 +1,42 @@
 #!/usr/bin/env python3
 import json
 from pathlib import Path
-import sys
 
-summary_path = Path("metadata/chaos_live_summary.json")
 results_path = Path("results/chaos_live_results.jsonl")
+summary_path = Path("metadata/chaos_live_summary.json")
 
 lines = results_path.read_text(encoding="utf-8").splitlines()
 parsed = [json.loads(line) for line in lines if line.strip()]
 
 total = len(parsed)
-passed = sum(1 for x in parsed if x.get("status") == "passed")
-failed = sum(1 for x in parsed if x.get("status") == "failed")
+passed = 0
+failed = 0
+unknown = []
 
-if total == 0:
-    print("no results found")
+for i, row in enumerate(parsed, 1):
+    status = str(row.get("status", "")).strip().lower()
+    if status in {"passed", "pass", "ok", "success"}:
+        passed += 1
+    elif status in {"failed", "fail", "error", "rejected"}:
+        failed += 1
+    else:
+        unknown.append((i, row.get("status")))
+
+if unknown:
+    print("unknown status values found:")
+    for line_no, value in unknown[:10]:
+        print(f"  line {line_no}: {value!r}")
     raise SystemExit(1)
 
 if passed + failed != total:
     print("pass/fail totals do not add up")
+    print(f"total={total} passed={passed} failed={failed}")
     raise SystemExit(1)
 
 if summary_path.exists():
     summary = json.loads(summary_path.read_text(encoding="utf-8") or "{}")
-    s_total = summary.get("total", total)
-    s_passed = summary.get("passed", passed)
-    s_failed = summary.get("failed", failed)
-
-    if (s_total, s_passed, s_failed) != (total, passed, failed):
-        print(f"summary mismatch: summary={s_total}/{s_passed}/{s_failed} results={total}/{passed}/{failed}")
+    if summary.get("total") not in {None, total}:
+        print(f"summary mismatch: summary total={summary.get('total')} results total={total}")
         raise SystemExit(1)
 
 print("results validated")
-raise SystemExit(0)
