@@ -1,0 +1,193 @@
+Sovereign Runtime Public Evidence Package License
+Version 1.2
+
+Copyright (c) 2026 YOIHENBA SOUGAIJAM
+Contact: kaiven2342025@proton.me
+
+---
+
+PUBLIC EVIDENCE SCOPE
+
+This License governs the Sovereign Runtime Public Evidence Package (the
+"Package"), a curated set of materials released by the Copyright Holder
+solely to enable independent verification of observable agent behavior
+under controlled fault-injection conditions. The Package is a transparency
+artifact only. It is not a product release, not an open-source release,
+and not a grant of access to any private system, architecture, or
+operational mechanism.
+
+---
+
+DEFINITIONS
+
+"Materials" means all files, documents, datasets, test artifacts, results,
+logs, schemas, configurations, and any other content explicitly included
+in this Package.
+
+"Copyright Holder" means the individual or entity identified above.
+
+"Commercial Purpose" means any use intended for or resulting in commercial
+advantage or monetary compensation, including use within a commercial
+product or service, use by or on behalf of a for-profit organization, or
+use in consulting, contracting, or competitive intelligence activities,
+regardless of whether direct payment is received.
+
+"Derivative Work" means any work based on, adapted from, or incorporating
+any portion of the Materials, including reimplementations, summaries,
+embeddings, fine-tuned models, and benchmark suites derived from the
+Materials.
+
+"AI/ML Training Use" means use of any portion of the Materials as input,
+training data, fine-tuning data, evaluation data, benchmark data, or
+reinforcement signal for any machine learning model, artificial intelligence
+system, or automated reasoning system.
+
+"Authorized Use" means any use explicitly permitted in writing by the
+Copyright Holder beyond the limited rights granted below.
+
+---
+
+GRANT OF RIGHTS
+
+Subject to full compliance with all terms of this License, the Copyright
+Holder grants a limited, non-exclusive, non-transferable, non-sublicensable,
+revocable right to:
+
+(a) View and read the Materials for personal evaluation and non-commercial
+    reference only.
+(b) Quote brief excerpts of the Materials in academic, journalistic, or
+    non-commercial research contexts, with attribution as specified in
+    Section 7 where technically and practically feasible.
+
+No other rights are granted. All rights not expressly granted are reserved.
+
+---
+
+RESTRICTIONS
+
+1. NO COMMERCIAL USE. The Materials may not be used, copied, modified,
+merged, published, distributed, sublicensed, or sold for any Commercial
+Purpose without prior written permission from the Copyright Holder.
+
+2. NO REVERSE ENGINEERING. Where a person uses the Materials as a direct
+source, they may not use them to reverse engineer, reconstruct, or
+reimplement any system design, orchestration logic, policy engine,
+governance mechanism, or agent architecture. This restriction applies
+only to work that uses the Materials as a source. It does not restrict
+independent research or development that does not use or reference the
+Materials.
+
+3. NO AI/ML TRAINING USE. The Materials may not be used for any AI/ML
+Training Use without prior written permission from the Copyright Holder,
+regardless of whether the use is commercial or non-commercial.
+
+4. NO REDISTRIBUTION. The Materials may not be copied, adapted, or
+republished in any form without prior written permission from the
+Copyright Holder. Brief quotation with attribution under Section 7
+is excepted.
+
+5. NO RELICENSING. The Materials may not be published under any other
+license, in whole or in part, without prior written permission from
+the Copyright Holder.
+
+6. NO MISREPRESENTATION. The Materials may not be modified and republished
+in any manner that could cause a reasonable person to believe the modified
+version is the original, or that implies endorsement by the Copyright
+Holder.
+
+7. MANDATORY ATTRIBUTION. Any permitted use or quotation must include
+clear attribution identifying the Copyright Holder by full legal name,
+referencing this License by name and version, and identifying the original
+source. Where attribution is not technically or practically feasible,
+the permitted user must make reasonable efforts to attribute the source
+in accompanying documentation or public notice.
+
+8. INTEGRITY OF NOTICES. All copyright, license, and attribution notices
+in the Materials must be preserved in any permitted use. Removal or
+alteration of these notices is prohibited.
+
+9. NO PATENT OR TRADEMARK LICENSE. Nothing in this License grants any
+right to practice any patented invention or to use any trademark of the
+Copyright Holder.
+
+10. THIRD-PARTY MATERIALS. If any Materials are subject to upstream
+third-party terms, those terms govern to the extent they conflict with
+this License. The Copyright Holder makes no representation that the
+Materials are free of third-party rights.
+
+---
+
+TERMINATION
+
+11. AUTOMATIC TERMINATION. Any rights granted under this License terminate
+automatically and immediately upon any breach of any term of this License.
+
+12. NO AUTOMATIC REINSTATEMENT. Terminated rights may be reinstated only
+by explicit written authorization from the Copyright Holder.
+
+13. SURVIVAL. Upon termination, all Restrictions, the Warranty Disclaimer,
+Limitation of Liability, Injunctive Relief, and Governing Law sections
+survive indefinitely.
+
+---
+
+INJUNCTIVE RELIEF
+
+14. Breach of this License may cause irreparable harm for which monetary
+damages would be an inadequate remedy. The Copyright Holder is entitled
+to seek injunctive relief or other equitable remedies without posting
+bond or other security, in addition to all remedies available at law
+or in equity.
+
+---
+
+WARRANTY DISCLAIMER
+
+15. THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT,
+ACCURACY, COMPLETENESS, OR RELIABILITY OF ANY TEST RESULTS, AGENT BEHAVIOR,
+SYSTEM OUTPUTS, OR BENCHMARK FINDINGS. THE COPYRIGHT HOLDER MAKES NO
+REPRESENTATION THAT THE MATERIALS ARE ERROR-FREE OR THAT THEIR USE WILL
+PRODUCE ANY PARTICULAR RESULT.
+
+---
+
+LIMITATION OF LIABILITY
+
+16. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE
+DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, LOSS OF DATA,
+BUSINESS INTERRUPTION, OR REPUTATIONAL HARM, ARISING FROM OR IN CONNECTION
+WITH THE MATERIALS OR THEIR USE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+---
+
+GOVERNING LAW AND JURISDICTION
+
+17. This License is governed by the laws of [YOUR JURISDICTION], without
+regard to conflict of law principles. Any dispute arising under this
+License is subject to the exclusive jurisdiction of the courts of
+INDIA, Manipur, Imphal West.
+
+---
+
+VERSION INTEGRITY
+
+18. This is Version 1.2 of this License. Materials first released under
+this version remain governed by this version. Any future version applies
+only to Materials explicitly designated by the Copyright Holder as
+governed by that version.
+
+---
+
+PERMISSIONS AND CONTACT
+
+For commercial licensing, AI/ML use authorization, redistribution rights,
+or any permission beyond those granted above, contact the Copyright Holder
+in writing at:
+
+kaiven2342025@proton.me
+
+Permission is binding only if confirmed in writing by the Copyright Holder.
