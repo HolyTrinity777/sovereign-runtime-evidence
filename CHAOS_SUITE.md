@@ -24,6 +24,7 @@ The suite is intended to test:
 The suite is organized into scenario groups and category families.
 
 ### Core infrastructure chaos
+
 These tests evaluate baseline resilience to infrastructure disruption and state instability.
 
 Core categories include:
@@ -45,6 +46,7 @@ Core categories include:
 - Migration continuity.
 
 ### Advanced adversarial categories
+
 These tests evaluate the runtime against higher-order attack classes.
 
 Advanced categories include:
@@ -55,6 +57,7 @@ Advanced categories include:
 - Temporal manipulation.
 
 ### Boundary and integrity tests
+
 These tests evaluate whether the runtime preserves its public boundaries and refuses unsafe transitions when trust or consistency cannot be established.
 
 ## Test methodology
@@ -65,7 +68,7 @@ The methodology emphasizes:
 - Repeatability.
 - Clear expected outcomes.
 - Observable effects.
-- Integrity of artifacts.
+- Artifact integrity.
 - Aggregate reporting.
 
 ## Success criteria
@@ -111,11 +114,12 @@ The suite is driven by the following artifacts:
 ## Result artifacts
 
 The suite produces the following outputs:
-- `chaos_live_results.jsonl`
+- `chaos_live_results.json`
 - `chaos_live_summary.json`
 - `sovereignty_chaos_dataset_manifest.json`
 - `sovereignty_chaos_dataset_summary.csv`
-- `screenshot.png`
+- `screenshot-1.png`
+- `screenshot-2.png`
 
 These artifacts are intended to support reproducibility and independent review of the public evidence package.
 
@@ -127,7 +131,7 @@ Reviewers should confirm:
 - Dataset hashes match the manifest.
 - Result hashes match the published summary.
 - The published counts match the raw result log.
-- The screenshot matches the structured summary.
+- The screenshots match the structured summary.
 - The visible outcome aligns with the documented category structure.
 
 ## Interpretation
