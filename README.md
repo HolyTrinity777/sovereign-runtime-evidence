@@ -17,17 +17,17 @@ This repository contains the public evidence package for a 7-agent sovereign act
 
 ## System Overview
 
-The runtime is organized around seven public roles:
+The runtime is organized around seven public roles that support coordination, recovery, safety, and continuity:
 
-- **Consensus** — Coordinates collective decision-making while preserving system invariants.
-- **Healer** — Handles recovery and state restoration.
-- **Anxiarch** — Oversees threat detection and policy enforcement.
-- **Destroyer** — Performs controlled termination and isolation of compromised components.
-- **Limbrix** — Manages resource governance and self-throttling.
-- **Preaxis** — Maintains identity continuity across migration and restart events.
-- **Vortexus** — Enforces sovereignty boundaries and system-level integrity constraints.
+- **Consensus** — Supports coordinated decision-making.
+- **Healer** — Supports recovery and restoration.
+- **Anxiarch** — Supports detection and policy oversight.
+- **Destroyer** — Supports isolation of compromised components.
+- **Limbrix** — Supports resource management and restraint.
+- **Preaxis** — Supports continuity across restart and migration events.
+- **Vortexus** — Supports boundary and integrity protection.
 
-These are role descriptions only. Internal orchestration logic, arbitration rules, and implementation details remain private.
+These descriptions are intentionally high level. The internal implementation, decision rules, and operational details are not disclosed in this repository.
 
 ## Verification Summary
 
