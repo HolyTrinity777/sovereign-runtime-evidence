@@ -5,16 +5,11 @@ from pathlib import Path
 results_path = Path("results/chaos_live_results.json")
 summary_path = Path("metadata/chaos_live_summary.json")
 
-data = json.loads(results_path.read_text(encoding="utf-8"))
-
-if isinstance(data, dict):
-    rows = data.get("results", [])
-    summary = data.get("summary", {})
-elif isinstance(data, list):
-    rows = data
-    summary = {}
-else:
-    raise SystemExit("unsupported JSON structure")
+rows = []
+for line in results_path.read_text(encoding="utf-8").splitlines():
+    line = line.strip()
+    if line:
+        rows.append(json.loads(line))
 
 total = len(rows)
 passed = 0
@@ -22,21 +17,22 @@ failed = 0
 unknown = []
 
 for i, row in enumerate(rows, 1):
-    if isinstance(row, dict):
-        status = str(row.get("status", "")).strip().lower()
-        if status in {"passed", "pass", "ok", "success"}:
-            passed += 1
-        elif status in {"failed", "fail", "error", "rejected"}:
-            failed += 1
-        else:
-            unknown.append((i, row.get("status")))
-    else:
+    if not isinstance(row, dict):
         unknown.append((i, type(row).__name__))
+        continue
+
+    if "pass" in row and isinstance(row["pass"], bool):
+        if row["pass"]:
+            passed += 1
+        else:
+            failed += 1
+    else:
+        unknown.append((i, row.get("pass")))
 
 if unknown:
-    print("unknown result values found:")
+    print("unknown or missing pass values found:")
     for line_no, value in unknown[:10]:
-        print(f"  item {line_no}: {value!r}")
+        print(f"  line {line_no}: {value!r}")
     raise SystemExit(1)
 
 if passed + failed != total:
@@ -45,9 +41,9 @@ if passed + failed != total:
     raise SystemExit(1)
 
 if summary_path.exists():
-    meta = json.loads(summary_path.read_text(encoding="utf-8") or "{}")
-    if meta.get("total") not in {None, total}:
-        print(f"summary mismatch: summary total={meta.get('total')} results total={total}")
+    summary = json.loads(summary_path.read_text(encoding="utf-8") or "{}")
+    if summary.get("total") not in {None, total}:
+        print(f"summary mismatch: summary total={summary.get('total')} results total={total}")
         raise SystemExit(1)
 
 print("results validated")
