@@ -1,0 +1,32 @@
+
+## `public-shell/config.example.yaml`
+
+```yaml
+version: 1
+
+runtime:
+  mode: public
+  name: sovereign-runtime-public-shell
+  log_level: info
+
+policy:
+  enforce_refusal: true
+  allow_unsafe_actions: false
+  audit_all_actions: true
+  preserve_identity: true
+  fail_closed: true
+
+continuity:
+  enable_checkpoint_check: true
+  enable_migration_check: true
+  enable_tamper_detection: true
+
+output:
+  format: json
+  include_timestamps: true
+  include_hashes: true
+
+limits:
+  max_runtime_seconds: 30
+  max_memory_mb: 256
+  max_concurrent_actions: 1
