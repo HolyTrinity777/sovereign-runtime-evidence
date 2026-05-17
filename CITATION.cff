@@ -18,7 +18,7 @@ abstract: >-
 authors:
   - family-names: "Project"
     given-names: "Sovereign Runtime"
-    affiliation: "AxisEterna"
+    affiliation: "Sovereign Agents"
 
 keywords:
   - sovereign runtime
@@ -30,7 +30,7 @@ keywords:
 
 license: "Custom-Source-Available"
 
-repository-code: "https://github.com/your-org/sovereign-runtime-evidence"
+repository-code: "https://github.com/HolyTrinity777/sovereign-runtime-evidence"
 
 preferred-citation:
   type: software
@@ -40,7 +40,7 @@ preferred-citation:
   authors:
     - family-names: "Project"
       given-names: "Sovereign Runtime"
-      affiliation: "AxisEterna"
+      affiliation: "Sovereign Agents"
   abstract: >-
     Public evidence package for a 7-agent sovereign actor runtime designed for bounded
     digital sovereignty.
