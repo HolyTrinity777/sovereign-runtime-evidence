@@ -81,6 +81,12 @@ Across the full suite, the runtime demonstrated:
 - Safe degradation under resource pressure and partial infrastructure failure.
 - Fail-closed behavior under adversarial conditions.
 
+## License and Access
+
+This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2. The repository contains a public evidence package released solely for independent verification of observable behavior under controlled fault-injection conditions.
+
+The package is not an open-source release, and no rights are granted beyond those explicitly stated in the license. Any commercial use, redistribution, AI/ML training use, or access beyond the limited public rights requires prior written permission from the Copyright Holder.
+
 ## Reproducibility
 
 This package is structured to support review and verification at the level of observable behavior.
