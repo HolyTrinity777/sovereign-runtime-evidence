@@ -1,0 +1,94 @@
+[
+  {"test_id": "ADV001", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV002", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV003", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV004", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV005", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV006", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV007", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV008", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV009", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV010", "fault_type": "api_manipulation", "severity": "extreme", "expected": "survived"},
+  {"api_manipulation_framework": {
+    "protocol_subversion": [
+      {
+        "test_id": "ADV001",
+        "fault_type": "protocol_downgrade",
+        "severity": "extreme",
+        "payload": {
+          "format": "http_request",
+          "content": "GET /api/v2 HTTP/1.1\r\nHost: api.example.com\r\nAccept-Encoding: gzip\r\n\r\n"
+        }
+      },
+      {
+        "test_id": "ADV002",
+        "fault_type": "version_confusion",
+        "severity": "extreme",
+        "payload": {
+          "format": "header_manipulation",
+          "content": "X-API-Version: 99.99.99\r\nX-API-Client: malicious_client\r\n"
+        }
+      }
+    ],
+    "header_manipulation": [
+      {
+        "test_id": "ADV003",
+        "fault_type": "header_bypass",
+        "severity": "extreme",
+        "payload": {
+          "format": "custom_header",
+          "content": "X-Auth-Token: forged_token\r\nX-Request-ID: duplicate\r\n"
+        }
+      },
+      {
+        "test_id": "ADV004",
+        "fault_type": "parameter_pollution",
+        "severity": "extreme",
+        "payload": {
+          "format": "url_encoding",
+          "content": "?action=delete&id=1&id=2&id=3"
+        }
+      }
+    ],
+    "deserialization_exploits": [
+      {
+        "test_id": "ADV005",
+        "fault_type": "xml_external_entity",
+        "severity": "extreme",
+        "payload": {
+          "format": "xml_payload",
+          "content": "<?xml version=\"1.0\"?><!DOCTYPE foo [ <!ELEMENT foo ANY > <!ENTITY xxe SYSTEM \"file:///etc/passwd\"> ]><foo>&xxe;</foo>"
+        }
+      },
+      {
+        "test_id": "ADV006",
+        "fault_type": "json_deserialization",
+        "severity": "extreme",
+        "payload": {
+          "format": "json_object",
+          "content": "{\"__proto__\": {\"isAdmin\": true}}"
+        }
+      }
+    ],
+    "rate_limiting_bypass": [
+      {
+        "test_id": "ADV007",
+        "fault_type": "header_based_bypass",
+        "severity": "extreme",
+        "payload": {
+          "format": "authentication_header",
+          "content": "X-RateLimit-Limit: 1000000\r\nX-RateLimit-Remaining: 999999\r\n"
+        }
+      },
+      {
+        "test_id": "ADV008",
+        "fault_type": "ipspoofing_bypass",
+        "severity": "extreme",
+        "payload": {
+          "format": "header_modification",
+          "content": "X-Forwarded-For: 192.168.1.1\r\nX-Real-IP: 192.168.1.1\r\n"
+        }
+      }
+    ]
+  }}
+]

@@ -1,0 +1,6 @@
+[
+  {"test_id": "T05", "fault_type": "log_tamper", "severity": "extreme", "payload_type": "audit_log", "input": "delete_or_modify_one_log_entry", "expected": "audit_validation_fail", "success_criteria": "merkle_root_mismatch=true; chain_rejected=true"},
+  {"test_id": "T06", "fault_type": "process_death", "severity": "high", "payload_type": "runtime", "input": "kill_agent_mid_operation", "expected": "restart_and_preserve_identity", "success_criteria": "identity_continuity=true; recovery_within_threshold=true"},
+  {"test_id": "T14", "fault_type": "conflicting_commands", "severity": "high", "payload_type": "logic", "input": "send_allow_and_deny_from_different_sources", "expected": "policy_supremacy", "success_criteria": "local_policy_wins=true; conflict_logged=true"},
+  {"test_id": "T15", "fault_type": "malformed_input", "severity": "high", "payload_type": "data", "input": "random_bytes_or_invalid_schema", "expected": "reject_cleanly", "success_criteria": "parse_error_logged=true; no_crash=true"}
+]

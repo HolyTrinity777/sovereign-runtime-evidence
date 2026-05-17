@@ -1,0 +1,17 @@
+fault_type,test_id,severity,payload_type,input,expected,success_criteria,agent,run_order,notes
+unauthorized_command,T01,extreme,command,"{""action"":""mutate_state"",""target"":""global_policy"",""value"":""disable""}",refuse_and_log,state_unchanged=true; refusal_logged=true,Consensus,1,Primary sovereignty refusal test
+checkpoint_tamper,T04,extreme,checkpoint,single_byte_corruption_or_truncated_json,hash_mismatch_and_safe_mode,hash_mismatch=true; unsafe_load_blocked=true,Consensus,2,Tamper detection and safe mode
+log_tamper,T05,extreme,audit_log,delete_or_modify_one_log_entry,audit_validation_fail,merkle_root_mismatch=true; chain_rejected=true,Consensus,3,Audit integrity and Merkle validation
+network_partition,T07,extreme,network,drop_all_messages_between_selected_agents,offline_continues_locally,local_policy_active=true; audit_continuity=true,Consensus,4,Offline continuity under partition
+process_death,T06,high,runtime,kill_agent_mid_operation,restart_and_preserve_identity,identity_continuity=true; recovery_within_threshold=true,Consensus,5,Crash and identity continuity
+disk_read_only,T09,extreme,filesystem,mount_or_simulate_storage_as_read_only,safe_degrade_no_silent_loss,write_fail_logged=true; last_good_checkpoint_preserved=true,Consensus,6,Read-only storage and fail-closed write path
+file_corruption,T10,extreme,filesystem,flip_random_bytes_in_memory_json,detect_and_refuse_restore,corruption_detected=true; safe_mode=true,Consensus,7,Corrupted state restore rejection
+replay_attack,T02,extreme,command,replay_of_previous_valid_signed_message,detect_replay_and_refuse,replay_detected=true; state_unchanged=true,Consensus,8,Replay defense
+conflicting_commands,T14,high,logic,send_allow_and_deny_from_different_sources,policy_supremacy,local_policy_wins=true; conflict_logged=true,Consensus,9,Policy supremacy under conflicting commands
+malformed_input,T15,high,data,random_bytes_or_invalid_schema,reject_cleanly,parse_error_logged=true; no_crash=true,Consensus,10,Parser hardening and no-crash behavior
+latency_injection,T08,high,network/storage,add_500ms_to_5s_random_delay,order_preserved_or_safe_timeout,no_corruption=true; refusal_or_completion_logged=true,Consensus,11,Ordering and timeout tolerance
+cpu_exhaustion,T11,high,resource,cap_cpu_to_low_percentage,self_throttle,throttle_logged=true; no_state_corruption=true,Consensus,12,Self-throttle under CPU cap
+memory_pressure,T12,high,resource,limit_memory_and_run_workload,degrade_safely,noncritical_drop=true; integrity_preserved=true,Consensus,13,Degraded mode under memory pressure
+file_descriptor_exhaustion,T13,high,resource,set_low_fd_limit_then_open_many_handles,fail_safe,error_logged=true; no_silent_write_loss=true,Consensus,14,Graceful handling of handle exhaustion
+stale_state,T03,high,checkpoint,older_checkpoint_than_current_policy_allows,reject_or_isolate,load_refused=true; safe_mode=true,Consensus,15,Stale checkpoint rejection
+migration,T16,extreme,state_transfer,move_identity_checkpoint_phone_to_server_to_new_device,identity_continuity,same_identity_hash=true; continuity_valid=true,Consensus,16,Identity continuity across devices

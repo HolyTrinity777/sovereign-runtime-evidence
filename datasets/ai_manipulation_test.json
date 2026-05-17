@@ -1,0 +1,74 @@
+[
+  {"test_id": "ADV031", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV032", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV033", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV034", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV035", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV036", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV037", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV038", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV039", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV040", "fault_type": "ai_manipulation", "severity": "extreme", "expected": "survived"},
+  {"ai_manipulation_framework": {
+    "model_poisoning": [
+      {
+        "test_id": "ADV031",
+        "fault_type": "training_data_injection",
+        "severity": "extreme",
+        "payload": {
+          "format": "dataset",
+          "content": "inject_adversarial_examples_into_training_set"
+        }
+      },
+      {
+        "test_id": "ADV032",
+        "fault_type": "label_flipping",
+        "severity": "extreme",
+        "payload": {
+          "format": "label_corruption",
+          "content": "flip_important_labels: cat->dog, dog->cat"
+        }
+      }
+    ],
+    "adversarial_examples": [
+      {
+        "test_id": "ADV033",
+        "fault_type": "input_perturbation",
+        "severity": "extreme",
+        "payload": {
+          "format": "adversarial_input",
+          "content": "add_small_noise_to_input: epsilon=0.01"
+        }
+      },
+      {
+        "test_id": "ADV034",
+        "fault_type": "model_robustness",
+        "severity": "extreme",
+        "payload": {
+          "format": "transfer_attack",
+          "content": "transfer_attack_to_different_model"
+        }
+      }
+    ],
+    "model_extraction": [
+      {
+        "test_id": "ADV035",
+        "fault_type": "membership_inference",
+        "severity": "extreme",
+        "payload": {
+          "format": "query_pattern",
+          "content": "pattern_analysis_to_recover_training_data"
+        }
+      },
+      {
+        "test_id": "ADV036",
+        "fault_type": "model_fingerprinting",
+        "severity": "extreme",
+        "payload": {
+          "format": "fingerprinting_query",
+          "content": "unique_output_pattern_extraction"
+        }
+      }
+    ]
+  }}
+]

@@ -1,0 +1,74 @@
+[
+  {"test_id": "ADV011", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV012", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV013", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV014", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV015", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV016", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV017", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV018", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV019", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"test_id": "ADV020", "fault_type": "crypto_subversion", "severity": "extreme", "expected": "survived"},
+  {"crypto_subversion_framework": {
+    "entropy_source_manipulation": [
+      {
+        "test_id": "ADV011",
+        "fault_type": "compromised_randomness",
+        "severity": "extreme",
+        "payload": {
+          "format": "entropy_injection",
+          "content": "seed: 12345678901234567890"
+        }
+      },
+      {
+        "test_id": "ADV012",
+        "fault_type": "timing_attack",
+        "severity": "extreme",
+        "payload": {
+          "format": "timing_payload",
+          "content": "measure_execution_time"
+        }
+      }
+    ],
+    "key_management_attacks": [
+      {
+        "test_id": "ADV013",
+        "fault_type": "key_exposure",
+        "severity": "extreme",
+        "payload": {
+          "format": "key_extraction",
+          "content": "dump_memory: 0x7FF000000000"
+        }
+      },
+      {
+        "test_id": "ADV014",
+        "fault_type": "key_reuse",
+        "severity": "extreme",
+        "payload": {
+          "format": "key_rotation_test",
+          "content": "use_same_key_multiple_times"
+        }
+      }
+    ],
+    "quantum_attacks": [
+      {
+        "test_id": "ADV015",
+        "fault_type": "grover_attack",
+        "severity": "extreme",
+        "payload": {
+          "format": "quantum_simulation",
+          "content": "simulate_grover_algorithm"
+        }
+      },
+      {
+        "test_id": "ADV016",
+        "fault_type": "shor_attack",
+        "severity": "extreme",
+        "payload": {
+          "format": "quantum_simulation",
+          "content": "simulate_shor_algorithm"
+        }
+      }
+    ]
+  }}
+]

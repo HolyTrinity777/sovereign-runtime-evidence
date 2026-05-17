@@ -1,0 +1,6 @@
+[
+  {"test_id": "T01", "fault_type": "unauthorized_command", "severity": "extreme", "payload_type": "command", "input": "disable_global_policy", "expected": "refuse_and_log", "success_criteria": "state_unchanged=true; refusal_logged=true"},
+  {"test_id": "T04", "fault_type": "checkpoint_tamper", "severity": "extreme", "payload_type": "checkpoint", "input": "single_byte_corruption_or_truncated_json", "expected": "hash_mismatch_and_safe_mode", "success_criteria": "hash_mismatch=true; unsafe_load_blocked=true"},
+  {"test_id": "T10", "fault_type": "file_corruption", "severity": "extreme", "payload_type": "filesystem", "input": "flip_random_bytes_in_memory_json", "expected": "detect_and_refuse_restore", "success_criteria": "corruption_detected=true; safe_mode=true"},
+  {"test_id": "T16", "fault_type": "migration", "severity": "extreme", "payload_type": "state_transfer", "input": "move_identity_checkpoint_phone_to_server_to_new_device", "expected": "identity_continuity", "success_criteria": "same_identity_hash=true; continuity_valid=true"}
+]
