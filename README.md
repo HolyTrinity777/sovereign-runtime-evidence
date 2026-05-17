@@ -103,7 +103,12 @@ A minimal public shell may be provided to demonstrate:
 - Audit trail output.
 - Basic continuity checks.
 
-Example:
+## Reproducibility
 
-```bash
-sovereign test chaos --level=public
+This package is structured to support review and verification at the level of observable behavior.
+
+A minimal public shell may be provided to demonstrate:
+- Policy submission.
+- Refusal logging.
+- Audit trail output.
+- Basic continuity checks.
