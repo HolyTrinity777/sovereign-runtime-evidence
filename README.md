@@ -11,9 +11,7 @@ This repository contains the public evidence package for a 7-agent sovereign act
 
 ## Purpose
 
-This repository serves a single, well-defined purpose: to provide independently verifiable evidence of runtime behavior under adversarial conditions.
-
-It is not an open-source release. It does not contain implementation code, private architecture, or operational secrets. It is a structured transparency artifact intended for technical review, institutional due diligence, and independent verification.
+This repository provides a public evidence package for review, verification, and transparency. It is intended to document observable behavior, test structure, and aggregate results while keeping private implementation details excluded.
 
 ---
 
@@ -24,28 +22,26 @@ It is not an open-source release. It does not contain implementation code, priva
 - `tests_dataset.json` — Structured JSON test dataset.
 - `screenshot-1.png` — Terminal output of the completed run, part 1.
 - `screenshot-2.png` — Terminal output of the completed run, part 2.
-- `CHAOS_SUITE.md` — Full test categories, methodology, and success criteria.
+- `CHAOS_SUITE.md` — Test categories, methodology, and success criteria.
 - `public-shell/` — Minimal observable-behavior shell for independent verification.
 - `scripts/` — Hash verification, result validation, and summary rendering tools.
-- `metadata/` — Manifest and integrity hashes for all published artifacts.
+- `metadata/` — Manifest and integrity hashes for published artifacts.
 
 ---
 
 ## System Overview
 
-The runtime is organized around seven named roles. Each role carries a bounded responsibility within the overall system. These descriptions are provided for orientation only.
+The runtime is organized around seven public roles that support coordination, recovery, safety, and continuity:
 
-| Role | Responsibility |
-|---|---|
-| **Consensus** | Supports coordinated decision-making. |
-| **Healer** | Supports recovery and restoration. |
-| **Anxiarch** | Supports detection and policy oversight. |
-| **Destroyer** | Supports isolation of compromised components. |
-| **Limbrix** | Supports resource management and restraint. |
-| **Preaxis** | Supports continuity across restart and migration events. |
-| **Vortexus** | Supports boundary and integrity protection. |
+- **Consensus** — Supports coordinated decision-making.
+- **Healer** — Supports recovery and restoration.
+- **Anxiarch** — Supports detection and policy oversight.
+- **Destroyer** — Supports isolation of compromised components.
+- **Limbrix** — Supports resource management and restraint.
+- **Preaxis** — Supports continuity across restart and migration events.
+- **Vortexus** — Supports boundary and integrity protection.
 
-Internal implementation, decision rules, arbitration logic, and operational details are not disclosed in this repository.
+*These descriptions are intentionally high level. The internal implementation, decision rules, and operational details are not disclosed in this repository.*
 
 ---
 
@@ -107,6 +103,16 @@ Across the full suite, the runtime consistently demonstrated:
 
 ---
 
+## Limitations
+
+- This repository publishes the public evidence layer only.
+- Internal orchestration logic, arbitration rules, and private implementation details are intentionally excluded.
+- The public artifacts support verification of observable behavior, not full system reproduction.
+- The reported results reflect the defined test scope and the controlled conditions under which the suite was executed.
+- Single-node execution model; distributed deployment behavior is not covered in this release.
+
+---
+
 ## Reproducibility
 
 The public evidence package is structured to support independent review and verification at the level of observable behavior.
@@ -117,7 +123,7 @@ A minimal public shell is included in the `/public-shell` directory. It exposes 
 - Audit trail output.
 - Basic continuity checks.
 
-To run the public evidence checks:
+To verify the published artifacts:
 
 ```bash
 python scripts/verify_hashes.py
@@ -125,21 +131,14 @@ python scripts/validate_results.py
 python scripts/render_summary.py
 ```
 
-All artifact hashes are documented in  metadata/ . Reviewers are encouraged to verify file integrity independently before analysis.
-
-## Limitations
-
-•	This repository publishes the public evidence layer only.
-•	Internal orchestration logic, arbitration rules, and private implementation details are intentionally excluded.
-•	The public artifacts support verification of observable behavior, not full system reproduction.
-•	The reported results reflect the defined test scope and the controlled conditions under which the suite was executed.
-•	Single-node execution model; distributed deployment behavior is not covered in this release.
+**All artifact hashes are documented in  metadata/ . Reviewers should verify file integrity independently before analysis.**
 
 ## License and Access
 
-This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2.
+*This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2.*
+
 The materials are released solely for independent verification of observable behavior under controlled fault-injection conditions. This is not an open-source release. No rights are granted beyond those explicitly stated in the license. Commercial use, redistribution, AI/ML training use, or any access beyond the stated public rights requires prior written permission from the Copyright Holder.
-See  LICENSE  for full terms.
+**See  LICENSE  for full terms.**
 
 ## Private Access and NDA
 
