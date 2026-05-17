@@ -1,0 +1,76 @@
+# Boundary Statement
+
+## Purpose
+
+This document defines the boundary between what is public in this repository and what remains private. The Sovereign Runtime public evidence package is designed to support transparency, review, and reproducibility without exposing the internal mechanisms that constitute the protected core of the system.
+
+## Public scope
+
+The following items are public and may be reviewed, shared, or cited:
+
+- High-level 7-agent architecture.
+- Role descriptions for the seven public agents.
+- Test methodology and category breakdowns.
+- Aggregate test results.
+- Dataset manifests and summaries.
+- Result summaries and hashes.
+- Screenshots or visual summaries of the completed run.
+- Optional minimal public shell behavior, if included.
+
+## Private scope
+
+The following items are intentionally withheld from public release:
+
+- The actual 7-agent orchestration engine.
+- Internal policy resolution logic.
+- Negotiation and arbitration mechanisms.
+- Hidden scoring or weighting systems.
+- Private defense implementations.
+- Attack payloads and exploit sequences.
+- Internal runtime secrets, credentials, or environment-specific details.
+
+## Reason for the boundary
+
+The purpose of the boundary is to allow public verification of observable behavior while protecting the system’s crown-jewel intellectual property. The public evidence package is intended to demonstrate that the runtime preserves its public invariants under stress, not to reveal the internal control logic used to achieve those results.
+
+## Public claims
+
+This repository supports the following public claims:
+
+- The runtime was tested under infrastructure chaos and adversarial conditions.
+- The runtime preserved identity continuity under the tested scenarios.
+- The runtime enforced policy supremacy against unauthorized or unsafe actions.
+- The runtime preserved audit integrity.
+- The runtime failed closed when trust or consistency could not be established.
+- The runtime maintained safe degradation under resource pressure and partial failures.
+
+These claims are supported by the public datasets, result summaries, and integrity artifacts included in this repository.
+
+## Non-claims
+
+This repository does not claim to expose:
+
+- The full source implementation of the sovereign runtime core.
+- The exact sequence of internal decisions taken by the agents.
+- The private logic used for recovery, arbitration, or enforcement.
+- The full details of harmful or sensitive adversarial inputs.
+
+## Access model
+
+The public repository is intended for review and verification of observable behavior. Access to the private core, advanced defense mechanisms, and internal orchestration logic may be provided separately under NDA or a commercial agreement to qualified partners, researchers, or customers.
+
+## Review guidance
+
+Reviewers should focus on:
+
+- Artifact consistency.
+- Hash integrity.
+- Result reproducibility.
+- Alignment between the documented methodology and the published outcomes.
+- Consistency between the stated invariants and the observed behavior.
+
+Reviewers should not expect the repository to disclose private implementation details or attack payloads.
+
+## Summary
+
+This repository is intentionally bounded. The public side demonstrates evidence, behavior, and results. The private side preserves the system’s core value and security.
