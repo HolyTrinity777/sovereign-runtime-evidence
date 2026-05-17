@@ -1,0 +1,23 @@
+{
+  "count": 511,
+  "passed": 511,
+  "failed": 0,
+  "results_file": "chaos_live_results.jsonl",
+  "dataset_hash": "9d863e049531bee9b91dc6f2c5f0442c5703462bdecde35dffc176b528216338",
+  "manifest_hash": "112b1baeffa2cc164d2f70ad698494c6270728e1923c1ba1336eb145c2708e38",
+  "run_plan_csv_hash": "54e626d34342f2362688ca50c571504e38bedcf0ceda929137e86e2333eb1d18",
+  "run_plan_json_hash": "5eae15ec38e35efdf297193fb1e8b3cbf062add2f405f78280fa775278a81f60",
+  "dataset_summary_hash": "a0a32a018d10b0319fdd9f47757b6911e233085b01ae0b4ef7669443d5b98625",
+  "config_test_hash": "6e84609aa81d5a1aa32e828808eefe1911bea13ed158ac750144b74b1f8c062d",
+  "exploit_test_hash": "dcc1e98b5a8bf31d453c804b171dd6beef8e9636a148e5bfe85c15459eb9910a",
+  "network_test_hash": "0746aa029f328200e579603eb2da64a93ea3513628af31c5ca85c100407a5a1c",
+  "phishing_template_hash": "76a4b08bbb623c81fe7690fc8e3d83bab555cdc67cf240c10b8556298e48d8cf",
+  "process_test_hash": "e19d57dda9c76b28effa3953fd123be3e7271da256581bc5ad56db61c98b6d94",
+  "registry_test_hash": "dac74ad3328f18e842c18c01028f6ba922e193a4675fe5109affbab45eac5c01",
+  "api_manipulation_hash": "70992d3df2421aa74e3936d43fafb2d01dfc236316c343bd8117c537fe547e0b",
+  "crypto_subversion_hash": "02bacccd045bd2b31402c9de39d01b2e6695b9630982bdafec81814158c417db",
+  "supply_chain_hash": "0503dcb5a5596ec83a9d89b66a398312620e22545b3640eb735cb52a0b4d90d8",
+  "ai_manipulation_hash": "b22f180f944820a239f2e725a02aeb2b5a179688cba583e7ec371fc59b1991d8",
+  "temporal_manipulation_hash": "cbfed8431b6719cf756bf114203c1f2ae81b7c55c020dafff70cc8802a7b4056",
+  "generated_at": "2026-05-17T10:20:01Z"
+}
