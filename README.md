@@ -40,10 +40,6 @@ The runtime was evaluated under a comprehensive adversarial chaos suite.
 - **Failed:** `0`
 - **Pass rate:** `100%`
 
-### Private Access / NDA
-
-The private sovereign runtime core is not included in this repository. Access to private materials, implementation details, or commercial review may be provided separately under NDA or other written agreement.
-
 ### Coverage Domains
 
 #### Core Infrastructure Chaos
@@ -90,6 +86,10 @@ Across the full suite, the runtime demonstrated:
 This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2. The repository contains a public evidence package released solely for independent verification of observable behavior under controlled fault-injection conditions.
 
 The package is not an open-source release, and no rights are granted beyond those explicitly stated in the license. Any commercial use, redistribution, AI/ML training use, or access beyond the limited public rights requires prior written permission from the Copyright Holder.
+
+### Private Access / NDA
+
+The private sovereign runtime core is not included in this repository. Access to private materials, implementation details, or commercial review may be provided separately under NDA or other written agreement.
 
 ## Reproducibility
 
