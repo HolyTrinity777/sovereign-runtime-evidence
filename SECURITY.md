@@ -12,7 +12,7 @@ If you believe you have found a security vulnerability in this repository, pleas
 
 Preferred reporting channels:
 - GitHub Security Advisory, if enabled for this repository.
-- Private email to the project security contact, if provided in the repository metadata or release notes.
+- Private email to the project security contact: kaiven2342025@proton.me
 
 Please include as much detail as possible, such as:
 - A description of the issue.
@@ -20,6 +20,7 @@ Please include as much detail as possible, such as:
 - Steps to reproduce the issue.
 - Any relevant logs, screenshots, or proof-of-concept material.
 - An assessment of the potential impact.
+
 
 ## Responsible disclosure
 
