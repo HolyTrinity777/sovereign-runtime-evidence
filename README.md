@@ -7,6 +7,10 @@
 
 This repository contains the public evidence package for a 7-agent sovereign actor runtime designed for bounded digital sovereignty. It documents high-level architecture, test methodology, aggregate results, and reproducible public artifacts without disclosing private orchestration internals.
 
+## Purpose of This Repository
+
+This repository provides a public evidence package for review, verification, and transparency. It is intended to document observable behavior, test structure, and aggregate results while keeping private implementation details excluded.
+
 ## Contents
 - `result.json` — Aggregated results and metadata.
 - `tests_dataset.csv` — Tabular test dataset.
@@ -82,6 +86,13 @@ Across the full suite, the runtime demonstrated:
 - Safe degradation under resource pressure and partial infrastructure failure.
 - Fail-closed behavior under adversarial conditions.
 
+## Limitations
+
+- This repository publishes only the public evidence layer.
+- Internal orchestration logic, arbitration rules, and private implementation details are not included.
+- The public artifacts are designed for verification of observable behavior, not full system reproduction.
+- The reported results reflect the tested public package and its defined scope.
+
 ## License and Access
 
 This repository is governed by the Sovereign Runtime Public Evidence Package License, Version 1.2. The repository contains a public evidence package released solely for independent verification of observable behavior under controlled fault-injection conditions.
@@ -96,19 +107,18 @@ The private sovereign runtime core is not included in this repository. Access to
 
 This package is structured to support review and verification at the level of observable behavior.
 
-A minimal public shell may be provided to demonstrate:
-
+A minimal public shell is included in the `/public-shell` directory to demonstrate observable behaviors:
 - Policy submission.
 - Refusal logging.
 - Audit trail output.
 - Basic continuity checks.
 
-## Reproducibility
+To run the public evidence checks:
 
-This package is structured to support review and verification at the level of observable behavior.
+```bash
+python scripts/verify_hashes.py
+python scripts/validate_results.py
+python scripts/render_summary.py
 
-A minimal public shell may be provided to demonstrate:
-- Policy submission.
-- Refusal logging.
-- Audit trail output.
-- Basic continuity checks.
+
+
